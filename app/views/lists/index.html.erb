@@ -1,0 +1,11 @@
+<h1>My lists</h1>
+
+<div class="row row-cols-3">
+  <% @lists.each do |list| %>
+    <div class="col">
+      <div class="card-category">
+        <%= link_to list.name, list_path(list) %>
+      </div>
+    </div>
+  <% end %>
+</div>
