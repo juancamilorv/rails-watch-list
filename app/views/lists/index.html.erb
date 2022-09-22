@@ -3,11 +3,12 @@
 <div class="row row-cols-3">
   <% @lists.each do |list| %>
     <div class="col">
-      <div class="card-category">
-        <%= link_to list.name, list_path(list) %>
+      <div class="card text-bg-dark" style="width: 18rem;">
+        <%= cl_image_tag list.photo.key, :class => 'card-img' %>
+        <div class="card-img-overlay">
+          <%= link_to list.name, list_path(list), class: 'card-title btn btn-primary' %>
+        </div>
       </div>
     </div>
   <% end %>
 </div>
-
-<%= cl_image_tag("https://res.cloudinary.com/dpcj8gyeu/image/upload/v1663634734/enazv63nvtykgf7sbkkp.jpg", width: 150, height: 150, crop: :thumb, gravity: :face) %>
